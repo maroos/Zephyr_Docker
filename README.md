@@ -1,18 +1,18 @@
 # Zephyr_Docker
 Zephyr OS repository with docker usage for Esp32 test project
 
-#build docker image
+# build docker image
 docker build -t env-zephyr-espressif -f tools/Dockerfile.espressif ./tools
-#ToDo check if ./tools or .
+# ToDo check if ./tools or .
 
-#ToDo: check and change if needed Dockerfile.espressif <- 
+# ToDo: check and change if needed Dockerfile.espressif <- 
 docker run --rm -it -p 3333:3333 -p 2222:22 -p 8800:8800 -v "$(pwd)"/workspace:/workspace -w /workspace env-zephyr-espressif
 
-#add support for device 
+# add support for device 
 docker run --rm -it -p 3333:3333 -p 2222:22 -p 8800:8800 -v "$(pwd)"/workspace:/workspace -w /workspace --device=/dev/ttyUSB0:/dev/ttyUSB0 env-zephyr-espressif
 
 
-#minimal with interactive mode:
+# minimal with interactive mode:
 docker run --rm -it -v "$(pwd)"/workspace:/workspace -w /workspace --device=/dev/ttyUSB0:/dev/ttyUSB0 env-test-zephyr-espressif
 
 #---- run in VSCode
@@ -39,12 +39,12 @@ west espressif monitor
 works: 
 west flash
 
-#monitor: 
+# monitor: 
 pyserial-miniterm /dev/ttyUSB0 115200
 
 
 
-#ToDo: 
+# ToDo: 
 
 - run sh while starting docker to have interactive mode
 - 
@@ -53,7 +53,7 @@ pyserial-miniterm /dev/ttyUSB0 115200
 
 
 
-#tips and tricks
+# tips and tricks
 
 - if esp32 board not supported message:
 
