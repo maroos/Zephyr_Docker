@@ -220,7 +220,7 @@ RUN echo "source ${VIRTUAL_ENV}/bin/activate" >> /root/.bashrc && \
     echo "source /opt/toolchains/zephyr/zephyr-env.sh" >> /root/.bashrc
 
 # Custom entrypoint
-COPY scripts/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh && \
-    dos2unix /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+#COPY scripts/entrypoint.sh /entrypoint.sh
+#RUN chmod +x /entrypoint.sh && \
+#    dos2unix /entrypoint.sh
+#ENTRYPOINT ["/entrypoint.sh"]
