@@ -2,6 +2,8 @@
 #include <zephyr/kernel.h>
 #include <zephyr/drivers/gpio.h>
 
+#include "HelloLib.h"
+
 // Settings
 static const int32_t sleep_time_ms = 1000;
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(DT_ALIAS(my_led), gpios);
@@ -38,6 +40,9 @@ int main(void)
 		printk("LED state inter: %d\r\n", state);
 		printk("LED state exter: %d\r\n", !state);
 
+		// Call the library function
+		hello_from_lib();
+		
 		// Set pin state
 		ret = gpio_pin_set_dt(&led, state);
 		if (ret < 0) {
